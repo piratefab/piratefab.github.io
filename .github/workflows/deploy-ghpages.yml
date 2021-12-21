@@ -1,0 +1,18 @@
+name: Modify files and Deploy to Pages
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Build script 🔧 
+        run: |
+          sed -i '/\<input\ type\=\"hidden\"\ name\=\"\_wpcf7/d' ./contact-us/index.html
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: main     # The branch the action should deploy to.
+          folder: .        # Root folder is "."
