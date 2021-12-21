@@ -1,0 +1,7 @@
+exclude:
+  - feed/
+  - html.html
+  - CHANGELOG.md
+  - CNAME
+  - LICENSE
+  - README.md
